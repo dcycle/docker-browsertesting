@@ -1,8 +1,7 @@
 {
     "name": "project",
     "version": "0.0.1",
-    "devDependencies": {
-        "mocha": "*",
-        "chai" : "*"
+    "scripts": {
+      "test": "karma start --single-run karma.conf.js"
     }
 }
