@@ -1,6 +1,6 @@
 module.exports = function(config) {
   config.set({
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['ng-scenario'],
     files: ['/test/test.js'],
     reporters: ['progress'],
     port: 9876,  // karma web server port
@@ -14,6 +14,10 @@ module.exports = function(config) {
         ]
       }
     },
+    proxies: {
+      '/': 'http://google.com'
+    },
+    browserNoActivityTimeout: 45000,
     browsers: ['ChromeHeadlessNoSandbox'],
     autoWatch: false,
     singleRun: true,
