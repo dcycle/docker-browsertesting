@@ -1,6 +1,6 @@
 module.exports = function(config) {
   config.set({
-    frameworks: ['ng-scenario'],
+    frameworks: ['jasmine'],
     files: ['/test/test.js'],
     reporters: ['progress'],
     port: 9876,  // karma web server port
