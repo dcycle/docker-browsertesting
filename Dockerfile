@@ -1,7 +1,7 @@
 # See
 # https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai
 # https://strongloop.com/strongblog/karma-test-client-side-javascript/
-#
+# http://mherman.org/blog/2015/04/09/testing-angularjs-with-protractor-and-karma-part-1/#.Wg8gxrYZMWo
 FROM node
 
 RUN mkdir -p /app/code
@@ -29,4 +29,4 @@ ADD docker-resources/karma.conf.js /app/karma.conf.js
 ADD test/test.js /test/test.js
 RUN ln -s /app/node_modules/karma/bin/karma /bin/karma
 
-ENTRYPOINT [ "karma", "start" ]
+ENTRYPOINT [ "./node_modules/mocha/bin/mocha" ]
