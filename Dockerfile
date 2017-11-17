@@ -21,6 +21,7 @@ RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable 
 RUN apt-get update && apt-get install -y google-chrome-stable
 
 RUN npm i --save-dev karma-jasmine
+RUN npm i --save-dev jasmine-core
 
 # Cannot run ./node_modules/karma/bin/karma init because of
 # https://github.com/karma-runner/karma/issues/1724.
