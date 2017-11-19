@@ -1,7 +1,11 @@
 # See
 # https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai
 # https://strongloop.com/strongblog/karma-test-client-side-javascript/
-# http://mherman.org/blog/2015/04/09/testing-angularjs-with-protractor-and-karma-part-1/#.Wg8gxrYZMWo
+#
+https://float-middle.com/protractor-and-headless-chrome-on-docker-with-video-tutorial/
+https://hub.docker.com/r/webnicer/protractor-headless/
+
+ http://mherman.org/blog/2015/04/09/testing-angularjs-with-protractor-and-karma-part-1/#.Wg8gxrYZMWo
 FROM node
 
 RUN mkdir -p /app/code
