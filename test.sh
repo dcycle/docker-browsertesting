@@ -1,3 +1,4 @@
+#!/bin/bash
 set -e
 
 docker kill local-browsertesting || true
