@@ -13,11 +13,12 @@ RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' |
 RUN apt-get -y update
 RUN apt-get -y install google-chrome-stable
 RUN ln -s /opt/google/chrome/chrome /bin/chrome
-RUN chrome --no-sandbox --headless http://google.com
-RUN chrome --no-sandbox --version
 
 WORKDIR /app
+RUN npm install mocha chai
 
-ADD docker-resources/test.js test/test.js
+ADD docker-resources /scripts
+ADD example01/test /app/test
 
-ENTRYPOINT [ "node" ]
+
+ENTRYPOINT [ "/scripts/run-tests.sh" ]
