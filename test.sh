@@ -18,9 +18,9 @@ docker run -v "$(pwd)"/example02/test:/app/test \
   --link myapp:myapp \
   local-browsertesting test/*.js
 
-docker run -v "$(pwd)"/example01/test:/app/code \
-  dcycle/browsertesting code/test.js
+docker run -v "$(pwd)"/example01/test:/app/test \
+  dcycle/browsertesting:2 test/*.js
 
-docker run -v "$(pwd)"/example02/test:/app/code \
+docker run -v "$(pwd)"/example02/test:/app/test \
   --link myapp:myapp \
-  dcycle/browsertesting code/test.js
+  dcycle/browsertesting:2 test/*.js
