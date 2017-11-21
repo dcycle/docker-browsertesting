@@ -19,6 +19,6 @@ RUN npm install mocha chai
 
 ADD docker-resources /scripts
 ADD example01/test /app/test
-
+RUN mkdir /artifacts
 
 ENTRYPOINT [ "/scripts/run-tests.sh" ]

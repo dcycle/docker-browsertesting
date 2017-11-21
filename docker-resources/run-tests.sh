@@ -9,3 +9,5 @@ echo -e '[info] Starting chrome in the background.'
 /scripts/start-chrome.sh > output.log 2>&1 &
 echo -e '[info] Running all tests with mocha in /app/test/*.js'
 /app/node_modules/mocha/bin/mocha test/*.js
+echo -e '[info] Move screenshots from /tmp to /artifacts'
+mv /tmp/*png /artifacts
