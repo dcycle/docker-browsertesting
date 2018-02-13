@@ -6,7 +6,7 @@ Test your code in a headless browser.
 Technologies
 -----
 
- * Branch 2: Chrome Headless and Mocha.
+ * [Branch 2](https://github.com/dcycle/docker-browsertesting/tree/2): Chrome Headless and Mocha.
  * Branch 1 (**this branch**, legacy): [PhantomJS](http://phantomjs.org), a headless browser, and [Casper](http://casperjs.org), the testing framework.
 
 Prerequisites
