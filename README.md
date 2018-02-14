@@ -1,8 +1,6 @@
 Test your code in a headless browser.
 =====
 
-[![CircleCI](https://circleci.com/gh/dcycle/docker-browsertesting.svg?style=svg)](https://circleci.com/gh/dcycle/docker-browsertesting)
-
 Technologies
 -----
 
