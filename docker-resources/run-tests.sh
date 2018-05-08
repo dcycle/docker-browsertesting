@@ -23,6 +23,10 @@ if [[ "$OUTPUT" = *"Exception alert"* ]]; then
   echo "Our output contains 'Exception alert'"
   echo "Exiting with 2"
   exit 2
+elif [[ "$OUTPUT" = *"AssertionError"* ]]; then
+  echo "Our output contains 'Exception alert'"
+  echo "Exiting with 2"
+  exit 1
 else
   echo "Our output does not contain 'Exception alert'"
   echo "Will now exit with the Mocha exit code"
