@@ -5,6 +5,9 @@
 #
 set -e
 
+echo '=> Build the image locally and test'
+./test-after-building-image.sh
+
 echo '=> Fail if a selector is not found.'
 docker run -v "$(pwd)"/example01/selector-not-present-example:/app/test   local-browsertesting test/*.js && FAIL=0 || FAIL=1
 if [ $FAIL == 0 ]; then
@@ -23,7 +26,5 @@ else
   echo 'Previous call failed as expected'
 fi
 
-echo '=> Build the image locally and test'
-#./test-after-building-image.sh
 echo '=> Make sure the image on the Docker hub works'
-#./test-from-dockerhub-image.sh
+./test-from-dockerhub-image.sh
