@@ -6,7 +6,7 @@
 #
 echo -e '[info] Starting chrome in the background.'
 # https://unix.stackexchange.com/questions/103731
-/scripts/start-chrome.sh > output.log 2>&1 &
+# /scripts/start-chrome.sh > output.log 2>&1 &
 echo -e '[info] Running all tests with mocha in /app/test/*.js'
 # See https://stackoverflow.com/a/12451419/1207752
 exec 5>&1
