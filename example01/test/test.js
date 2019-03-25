@@ -1,29 +1,28 @@
-// See https://github.com/graphcool/chromeless/blob/master/examples/mocha-chai-test-example.js
-const { Chromeless } = require('chromeless')
+// See https://github.com/GoogleChrome/puppeteer/blob/master/examples/search.js
+'use strict';
+
+const puppeteer = require('puppeteer');
+
 const { expect } = require('chai')
 
-describe('When searching on google', function () {
-  it('shows results', async function () {
-    this.timeout(10000); //we need to increase the timeout or else mocha will exit with an error
-    const chromeless = new Chromeless()
-
-    try {
-      const screenshot = await chromeless.goto('https://google.com')
-        .wait('input[name="q"]')
-        .type('chromeless github', 'input[name="q"]')
-        .press(13) // press enter
-        .wait('#resultStats')
-        .screenshot();
-
-      const result = await chromeless.exists('a[href*="graphcool/chromeless"]')
-
-      expect(result).to.be.true
-    } catch(err) {
-      // The exact string "Exception alert" is important here, as its
-      // presence causes a non-0 exit code in ./docker-resources/run-tests.sh.
-      console.log('Exception alert.');
-    }
-
-    await chromeless.queue.chrome.close()
-  })
+const browser = await puppeteer.launch({
+   headless: true,
+   args: ['--no-sandbox', '--disable-setuid-sandbox']
 })
+
+try {
+  describe('When searching on google', function () {
+    it('shows results', async function () {
+      var result = true;
+      const page = await browser.newPage()
+      await page.goto('https://google.com')
+      await page.type('input[name="q"]', 'Headless Chrome')
+      await page.click('input[value="Google Search"]')
+      await page.waitForSelector('a[href*="headless-chrome"]')
+      expect(result).to.be.true
+    })
+  })
+} catch (err) {
+  console.error('Exception alert' + err)
+  await browser.close()
+}
