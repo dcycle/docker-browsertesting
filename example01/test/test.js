@@ -1,4 +1,6 @@
-(async () => {
+const { expect } = require('chai')
+
+it('A failing test should make the script exit with an error code', async function() {
   const puppeteer = require('puppeteer')
   const browser = await puppeteer.launch({
      headless: true,
@@ -20,4 +22,5 @@
     console.log(error);
   }
   await browser.close()
-})()
+  expect(result).to.be.false;
+});
