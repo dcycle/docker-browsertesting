@@ -1,6 +1,7 @@
 const { expect } = require('chai')
 
-it('A failing test should make the script exit with an error code', async function() {
+it('It should be possible to search for something on Google', async function() {
+  this.timeout(3300);
   const puppeteer = require('puppeteer')
   const browser = await puppeteer.launch({
      headless: true,
@@ -12,8 +13,8 @@ it('A failing test should make the script exit with an error code', async functi
     await page.setViewport({ width: 1280, height: 800 })
     await page.goto('https://google.com')
     await page.type('input[name="q"]', 'puppeteer')
-    // await page.type(String.fromCharCode(13));
-    // await page.waitForSelector('#resultStats')
+    await page.keyboard.press('Enter');
+    await page.waitForSelector('#resultStats')
     // await page.screenshot()
     // await page.waitForSelector('a[href*="graphcool/chromeless"]')
     result = true
@@ -22,5 +23,5 @@ it('A failing test should make the script exit with an error code', async functi
     console.log(error);
   }
   await browser.close()
-  expect(result).to.be.false;
+  expect(result).to.be.true;
 });
