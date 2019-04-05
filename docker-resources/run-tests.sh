@@ -21,7 +21,7 @@ if [[ "$OUTPUT" = *"Exception alert"* ]]; then
   echo "Exiting with 2"
   exit 2
 elif [[ "$OUTPUT" = *"AssertionError"* ]]; then
-  echo "Our output contains 'Exception alert'"
+  echo "Our output contains 'AssertionError'"
   echo "Exiting with 2"
   exit 1
 else

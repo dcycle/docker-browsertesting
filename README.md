@@ -20,7 +20,7 @@ Simple example
 
 This example makes sure it is possible to perform a search on Google.com.
 
-    docker run -v "$(pwd)"/example01/test:/app/test \
+    docker run --rm -v "$(pwd)"/example01/test:/app/test \
       -v "$(pwd)"/artifacts:/artifacts \
       dcycle/browsertesting:3
 
@@ -31,11 +31,27 @@ This second example builds a "to do" app in a Docker container, then runs tests
 against it.
 
     cd ./example02 && ./build-sample-app.sh && cd ..
-    docker run -v "$(pwd)"/example02/test:/app/test \
+    docker run --rm -v "$(pwd)"/example02/test:/app/test \
       -v "$(pwd)"/artifacts:/artifacts \
       --network myapp-network \
       dcycle/browsertesting:3 test/test.js
 
+Other examples
+-----
+
+    docker run --rm -v "$(pwd)"/example01/failing-test-example:/app/test \
+      -v "$(pwd)"/artifacts:/artifacts \
+      dcycle/browsertesting:3
+
+    docker run --rm -v "$(pwd)"/example01/passing-test-example:/app/test \
+      -v "$(pwd)"/artifacts:/artifacts \
+      dcycle/browsertesting:3
+
+    docker run --rm -v "$(pwd)"/example01/selector-not-present-example:/app/test \
+      -v "$(pwd)"/artifacts:/artifacts \
+      dcycle/browsertesting:3
+
 Resources:
+-----
 
 * [This image on the Docker hub](https://hub.docker.com/r/dcycle/browsertesting/).
