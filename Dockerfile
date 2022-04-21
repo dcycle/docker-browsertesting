@@ -14,9 +14,6 @@ RUN apt-get -y update && \
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
-RUN echo 'a'
-RUN find / -name *chromium*
-
 # We need to install a bunch of dependencies to avoid errors when
 # Chromium is run.
 RUN cd /app && npm install puppeteer && \
