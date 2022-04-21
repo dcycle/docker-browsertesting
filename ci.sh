@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # Run continuous integration script on CircleCI.
 # See also ./.circleci/config.yml.

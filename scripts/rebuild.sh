@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Rebuild script
 # This is meant to be run on a regular basis to make sure everything works with
 # the latest version of scripts.

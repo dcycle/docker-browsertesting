@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # Test using image hosted on docker hub.
 #

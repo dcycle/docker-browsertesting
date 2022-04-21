@@ -11,6 +11,7 @@ set -e
 mkdir -p /app/code
 cd /app
 apk add --no-cache chromium
+
 npm install puppeteer
 npm install mocha chai
 mkdir /artifacts
