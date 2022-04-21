@@ -30,5 +30,4 @@ else
   echo 'Previous call failed as expected'
 fi
 
-echo '=> Make sure the image on the Docker hub works'
-./test-from-dockerhub-image.sh
+echo '=> Testing complete!'
