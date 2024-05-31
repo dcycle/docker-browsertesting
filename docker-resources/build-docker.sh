@@ -14,7 +14,7 @@ apk add --no-cache chromium
 
 npm install puppeteer
 # https://github.com/mochajs/mocha/issues/4880
-npm install mocha chai
+npm install mocha chai@4
 
 mkdir /artifacts
 apk add --no-cache \
