@@ -58,7 +58,7 @@ Resources:
 Migrating from tag 4 to tag 5:
 -----
 
-* Migrated to chai5 from chai4.
+* Inorder to Migrate chai5 from chai4.
 ```
 In ./docker-resources/build-docker.sh, change this line:
 
