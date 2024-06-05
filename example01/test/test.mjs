@@ -1,14 +1,14 @@
-const { expect } = require('chai')
-const fs = require('fs')
+import puppeteer from 'puppeteer';
+import { expect } from 'chai';
+import fs from 'fs';
 
 it('It should be possible to search for something on Google', async function() {
   this.timeout(15000);
-  const puppeteer = require('puppeteer')
   const browser = await puppeteer.launch({
      headless: true,
      args: ['--no-sandbox', '--disable-setuid-sandbox']
   })
-  var result = false
+  let result = false
   try {
     const page = await browser.newPage()
     console.log('...set viewport')
