@@ -13,7 +13,7 @@ echo '=> Test example02'
 docker run --rm -v "$(pwd)"/example02/test:/app/test \
   -v "$(pwd)"/artifacts:/artifacts \
   --network myapp-network \
-  local-browsertesting test/*.mjs
+  local-browsertesting test/*.js
 
 echo '=> Destroy the sample app'
 (cd ./example02 && ./destroy-sample-app.sh)
