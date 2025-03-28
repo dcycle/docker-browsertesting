@@ -17,13 +17,10 @@ it('It should be possible to add a "todo" item to our app', async function() {
     await page.setViewport({ width: 1280, height: 800 });
     console.log('go to our todo app');
     await page.goto('http://myapp-container/todomvc/examples/angularjs_require/');
-    console.log('taking a screenshot');
-    await page.screenshot({ path: './artifacts/todo-screenshot.png' });
     console.log('About to type something into the to do app.');
     await page.type('.new-todo', 'call mom');
     await page.keyboard.press('Enter');
-    console.log('taking another screenshot');
-    await page.screenshot({ path: './artifacts/todo-screenshot2.png' });
+
     console.log('Successfully typed something into the to do app.');
 
     console.log('Confirming that the .todo-count selector is present.');
