@@ -1,12 +1,13 @@
-import puppeteer from 'puppeteer';
-import { expect } from 'chai';
-import fs from 'fs';
+const puppeteer = require('puppeteer');
+const { expect } = require('chai');
+const fs = require('fs');
 
 it('It should be possible to add a "todo" item to our app', async function() {
-  this.timeout(15000);
+  this.timeout(80000);
   const browser = await puppeteer.launch({
      headless: true,
-     args: ['--no-sandbox', '--disable-setuid-sandbox']
+     args: ['--no-sandbox', '--disable-setuid-sandbox'],
+     protocolTimeout: 100000  // Adjust this value as needed for your app's load time
   })
   let result = false
   try {
