@@ -1,7 +1,7 @@
 Test your website in a headless browser.
 =====
 
-[![GitHub Actions](https://github.com/dcycle/docker-browsertesting/actions/workflows/config.yml/badge.svg)](https://github.com/dcycle/docker-browsertesting/actions/workflows/config.yml)
+[![GitHub Actions](https://github.com/dcycle/docker-browsertesting/actions/workflows/config.yml/badge.svg)](../../actions/workflows/config.yml)
 
 Technologies
 -----
